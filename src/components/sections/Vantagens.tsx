@@ -6,7 +6,7 @@ import ActionButton from "../buttons/ActionButton";
 
 const Vantagens = () => {
   return (
-    <section id="vantagens" className="bg-white py-16 px-6">
+    <section id="vantagens" className="bg-[#ddd] py-16 px-6">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         <div className="text-left">
           <p className="text-sm font-bold text-[#94C68A] uppercase mb-2">Vantagens</p>

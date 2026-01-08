@@ -4,7 +4,7 @@ import ActionButton from "../buttons/ActionButton";
 
 const Hero = () => {
   return (
-    <section id="hero" className="bg-black text-white px-6 py-20 top-20 rounded-b-[50px]">
+    <section id="hero" className="bg-black text-[#ddd] px-6 py-20 top-20 rounded-b-[50px]">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-10">
         <div>
           <h1 className="text-5xl font-bold text-[#94C68A] mb-4 mt-16" style={{ fontFamily: "'Exo Soft Bold'" }}>
@@ -18,7 +18,7 @@ const Hero = () => {
 
         <div className="relative w-full h-[500px] md:h-full rounded-3xl shadow-inner min-h-[400px] overflow-hidden">
           <Image
-            src="/Liv_fotoDestaque.svg"
+            src="/Green-Energy_fotoDestaque.svg"
             fill
             alt="Foto destaque"
             className="absolute top-0 left-0 w-full h-full object-cover rounded-3xl opacity-80"
@@ -34,7 +34,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="mt-10 flex flex-col md:grid md:grid-cols-5 gap-6 text-sm text-white max-w-7xl mx-auto items-center">
+      <div className="mt-10 flex flex-col md:grid md:grid-cols-5 gap-6 text-sm text-[#ddd] max-w-7xl mx-auto items-center">
         <div className="flex items-center gap-3 text-center md:text-left">
           <BsCheck2Circle className="text-[#94C68A] w-10 h-10 flex-shrink-0" />
           <p>

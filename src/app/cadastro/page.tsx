@@ -13,7 +13,7 @@ export default function CadastroPage() {
 
       <footer className="w-full py-5 bg-black text-center rounded-t-[50px]">
         <div className="flex justify-end mr-10">
-          <p className="text-white">&copy; {new Date().getFullYear()} Green Energy. Todos os direitos reservados.</p>
+          <p className="text-[#ddd]">&copy; {new Date().getFullYear()} Green Energy. Todos os direitos reservados.</p>
         </div>
       </footer>
     </>

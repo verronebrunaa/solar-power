@@ -20,7 +20,7 @@ const perguntasERespostas = [
       "Sim! Basta que a conta esteja no seu nome ou você tenha autorização do titular. Como não há instalação, não há impacto no imóvel.",
   },
   {
-    pergunta: "Consigo assinar a Liv para minha casa e para minha empresa?",
+    pergunta: "Consigo assinar a Green-Energy para minha casa e para minha empresa?",
     resposta:
       "Sim! Você pode cadastrar quantas unidades consumidoras quiser, desde que estejam dentro da área de cobertura e desde que seja o titular da conta.",
   },
@@ -54,7 +54,7 @@ export default function Duvidas() {
         {perguntasERespostas.map((item, index) => (
           <div
             key={index}
-            className="border border-[#94C68A] rounded-md bg-white transition-all"
+            className="border border-[#94C68A] rounded-md bg-[#ddd] transition-all"
           >
             <button
               className="w-full text-left text-black p-4 flex justify-between items-center font-semibold text-sm"

@@ -67,7 +67,7 @@ export default function Depoimentos() {
   };
 
   return (
-    <div id="depoimentos" className="px-16 py-10 bg-white">
+    <div id="depoimentos" className="px-16 py-10 bg-[#ddd]">
       <div className="flex items-center justify-between mb-6">
         <div>
           <p className="text-sm text-blue-500 font-semibold uppercase mb-1">
@@ -80,13 +80,13 @@ export default function Depoimentos() {
         <div className="flex items-center gap-2">
           <button
             onClick={handlePrev}
-            className="p-2 bg-white rounded-full shadow hover:bg-gray-100"
+            className="p-2 bg-[#ddd] rounded-full shadow hover:bg-gray-100"
           >
             <FaChevronLeft />
           </button>
           <button
             onClick={handleNext}
-            className="p-2 bg-white rounded-full shadow hover:bg-gray-100"
+            className="p-2 bg-[#ddd] rounded-full shadow hover:bg-gray-100"
           >
             <FaChevronRight />
           </button>

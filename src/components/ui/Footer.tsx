@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   FaInstagram,
   FaYoutube,
@@ -9,12 +10,12 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#061121] text-white pt-12 pb-6 rounded-t-4xl">
+    <footer className="w-full bg-[#061121] text-[#ddd] pt-12 pb-6 rounded-t-4xl">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div className="flex flex-col items-start">
-            <div className="mb-4">
-              <img src="/Logo-Solstice-Power.svg" alt="Logo Green Energy" style={{ width: '100%', height: '100%' }} />
+            <div className="mb-4 relative w-full h-16">
+              <Image src="/Logo-Solstice-Power.svg" alt="Logo Green Energy" fill style={{ objectFit: 'contain' }} />
             </div>
           </div>
 

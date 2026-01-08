@@ -13,11 +13,11 @@ const Simulador = () => {
   return (
     <section
       id="simulador"
-      className="bg-black rounded-xl text-white px-6 py-8 max-w-7xl mx-auto my-10 flex flex-col md:flex-row items-center gap-6"
+      className="bg-black rounded-xl text-[#ddd] px-6 py-8 max-w-7xl mx-auto my-10 flex flex-col md:flex-row items-center gap-6"
     >
       <div className="w-full md:w-1/3">
         <Image
-          src="/mulher-feliz.svg"
+          src="/"
           alt="Mulher sorrindo"
           width={500}
           height={500}
@@ -26,8 +26,8 @@ const Simulador = () => {
       </div>
 
       <div className="w-full md:w-2/3 space-y-4 text-center">
-        <h3 className="text-3xl text-white font-bold">Simule já sua economia!</h3>
-        <p className="text-sm text-white">Quanto você gasta de luz, em média, por mês?</p>
+        <h3 className="text-3xl text-[#ddd] font-bold">Simule já sua economia!</h3>
+        <p className="text-sm text-[#ddd]">Quanto você gasta de luz, em média, por mês?</p>
 
         <div className="flex flex-col gap-2 relative">
           <input
@@ -37,7 +37,7 @@ const Simulador = () => {
             value={gasto}
             step={100}
             onChange={(e) => setGasto(Number(e.target.value))}
-            className="w-full h-2 bg-white rounded-full appearance-none"
+            className="w-full h-2 bg-[#ddd] rounded-full appearance-none"
             style={{
               accentColor: "#94C68A",
               WebkitAppearance: "none",
@@ -46,8 +46,8 @@ const Simulador = () => {
             }}
             aria-label="Simulador de gasto de luz mensal"
           />
-          <div className="text-white text-3xl font-bold">R$ {gasto.toLocaleString("pt-BR")},00</div>
-          <p className="text-sm text-white">(valor mínimo R$500,00)</p>
+          <div className="text-[#ddd] text-3xl font-bold">R$ {gasto.toLocaleString("pt-BR")},00</div>
+          <p className="text-sm text-[#ddd]">(valor mínimo R$500,00)</p>
           <div className="w-full h-[1px] bg-[#94C68A] my-4"></div>
         </div>
 

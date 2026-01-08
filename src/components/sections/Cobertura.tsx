@@ -1,12 +1,11 @@
 "use client";
 import Image from "next/image";
 import { BsCheck2Circle } from "react-icons/bs";
-import Link from "next/link";
 import ActionButton from "../buttons/ActionButton";
 
 const Cobertura = () => {
   return (
-    <section id="cobertura" className="px-6 py-16 bg-black text-white rounded-[50px]">
+    <section id="cobertura" className="px-6 py-16 bg-black text-[#ddd] rounded-[50px]">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         <div className="text-left">
           <p className="text-sm font-bold text-[#94C68A] uppercase mb-2 flex items-center gap-2">Cobertura</p>
@@ -16,7 +15,7 @@ const Cobertura = () => {
             <br />e expandindo
           </h2>
 
-          <ul className="space-y-5 text-white text-base font-medium">
+          <ul className="space-y-5 text-[#ddd] text-base font-medium">
             <li className="flex items-center gap-3">
               <BsCheck2Circle className="text-[#94C68A] mt-1 w-10 h-10" />
               <div>
@@ -95,8 +94,8 @@ const Cobertura = () => {
               </div>
 
               <div
-                className="absolute left-1/2 -translate-x-1/2 -top-14 bg-white text-black text-xs px-3 py-2 rounded-lg shadow-lg 
-        opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-20"
+                className="absolute left-1/2 -translate-x-1/2 -top-14 bg-[#ddd] text-black text-xs px-3 py-2 rounded-lg shadow-lg 
+        opacity-0 group-hover:opacity-100 transition-opacity [#ddd]space-nowrap z-20"
               >
                 {concessionarias.join(", ")}
               </div>

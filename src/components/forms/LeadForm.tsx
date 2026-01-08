@@ -143,7 +143,7 @@ export function LeadForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="w-full max-w-[335px] h-auto text-black bg-white rounded-[8px] px-[20px] py-[26px] space-y-[20px] mx-auto"
+      className="w-full max-w-[335px] h-auto text-black bg-[#ddd] rounded-[8px] px-[20px] py-[26px] space-y-[20px] mx-auto"
     >
       {step === 1 && (
         <>
@@ -834,7 +834,7 @@ export function LeadForm() {
                       type="submit"
                       onClick={handleSubmit(onSubmit, onError)}
                       disabled={isLoading}
-                      className="bg-[#49BDF4] text-black px-6 py-2 rounded-[30px] w-full sm:w-[148px] h-[46px] font-bold flex justify-center items-center disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="bg-[#94C68A] text-black px-6 py-2 rounded-[30px] w-full sm:w-[148px] h-[46px] font-bold flex justify-center items-center disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {isLoading ? <CgSpinnerAlt className="animate-spin" /> : "Enviar"}
                     </button>

@@ -69,7 +69,7 @@ const steps = [
 
 export default function Funciona() {
   return (
-    <section id="como-funciona" className="bg-white px-4 py-16 md:px-20 text-slate-900">
+    <section id="como-funciona" className="bg-[#ddd] px-4 py-16 md:px-20 text-slate-900">
       <div className="max-w-7xl mx-auto gap-12 items-center">
         <div className="text-left">
           <h4 className="text-sm font-bold text-[#94C68A] uppercase mb-2 flex items-center gap-2">COMO FUNCIONA</h4>
