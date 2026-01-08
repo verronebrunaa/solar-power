@@ -1,0 +1,183 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ECECEC;
+  --foreground: #ECECEC;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Exo Soft Light", sans-serif;
+  --font-serif: "Exo Soft SemiBold", serif;
+  --font-mono: "Exo Soft Bold", monospace;
+  --font-heading: "Exo Soft Medium", sans-serif;
+  --font-code: "Exo Soft Light", monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ECECEC;
+    --foreground: #ECECEC;
+  }
+}
+
+@font-face {
+  font-family: "Exo Soft Light";
+  src: url("/fonts/ExoSoft-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Exo Soft SemiBold";
+  src: url("/fonts/ExoSoft-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Exo Soft Bold";
+  src: url("/fonts/ExoSoft-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Exo Soft Medium";
+  src: url("/fonts/ExoSoft-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+.input {
+  @apply w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 35px;
+  width: 35px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg fill='%234CAACE' viewBox='0 0 320 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M296 160H180.7L214.6 10.6c2.3-10.8-11.1-17.4-18.6-9.4L24 192h96L85.4 341.4c-2.3 10.8 11.1 17.4 18.6 9.4L296 160z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+  color: #0a0a0a;
+}
+
+.step-3-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+label {
+  font-size: 14px;
+  color: #333;
+}
+
+.input-field {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.input-field:focus {
+  border-color: #49BDF4;
+}
+
+select.input-field {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: white;
+  padding: 10px;
+}
+
+input[type="text"] {
+  width: 100%;
+}
+
+.custom-file-container {
+  position: relative;
+}
+
+.file-input {
+  position: absolute;
+  opacity: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.custom-file-label {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f3f4f6;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+}
+
+.custom-file-label:hover {
+  background-color: #e5e7eb;
+  border-color: #bbb;
+}
+
+.custom-file-label:active {
+  background-color: #d1d5db;
+}
+
+.error-message {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.5;
+  max-width: 380px; 
+}
+
+.error-message p {
+  margin: 0 0 10px;
+}
+
+.error-message strong {
+  font-weight: bold;
+}
+
+.error-message ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.error-message ul li {
+  margin-bottom: 4px;
+}
