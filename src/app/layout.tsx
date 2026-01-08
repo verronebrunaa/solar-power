@@ -13,20 +13,20 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "LivEnergy - Sua economia é a nossa energia",
+  title: "Green Energy",
   keywords: ["energia", "economia", "energia renovável"],
   description: "Sua economia é a nossa energia",
-  authors: [{ name: "LivEnergy" }],
-  creator: "LivEnergy",
+  authors: [{ name: "Green Energy" }],
+  creator: "Green Energy",
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
-    title: "LivEnergy - Sua economia é a nossa energia",
+    title: "Green Energy - Sua economia é a nossa energia",
     description: "Sua economia é a nossa energia",
-    url: "https://livenergy.com.br",
-    siteName: "LivEnergy",
+    url: "https://greenenergy.com.br",
+    siteName: "Green Energy",
     locale: "pt-BR",
     type: "website",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
         url: "https://d2i61nj9m5jy3t.cloudfront.net/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Imagem de capa da LivEnergy",
+        alt: "Imagem de capa da Green Energy",
       },
     ],
   },

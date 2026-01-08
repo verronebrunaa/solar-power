@@ -11,9 +11,9 @@ export default function CadastroPage() {
         </div>
       </main>
 
-      <footer className="w-full py-5 bg-[#0B1627] text-center rounded-t-[50px]">
+      <footer className="w-full py-5 bg-black text-center rounded-t-[50px]">
         <div className="flex justify-end mr-10">
-          <p className="text-[#ECECEC]">&copy; {new Date().getFullYear()} Solstice Power. Todos os direitos reservados.</p>
+          <p className="text-white">&copy; {new Date().getFullYear()} Green Energy. Todos os direitos reservados.</p>
         </div>
       </footer>
     </>
