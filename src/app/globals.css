@@ -1,8 +1,13 @@
 @import "tailwindcss";
 
+
 :root {
-  --background: #ddd;
-  --foreground: #ddd;
+  --background: #F4F4F4;
+  --foreground: #F4F4F4;
+  --color-primary: #94C68A;
+  --color-secondary: #38bdf8;
+  --color-highlight: #facc15;
+  --color-alternative: #5381Bd;
 }
 
 @theme inline {
@@ -17,8 +22,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #ddd;
-    --foreground: #ddd;
+    --background: #F4F4F4;
+    --foreground: #F4F4F4;
   }
 }
 
@@ -61,21 +66,21 @@ body {
 }
 
 .input {
-  @apply w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500;
+  @apply w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)];
 }
 
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  height: 35px;
-  width: 35px;
+  height: 50px;
+  width: 50px;
   background: none;
   border: none;
   cursor: pointer;
-  background-image: url("data:image/svg+xml,%3Csvg fill='%234CAACE' viewBox='0 0 320 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M296 160H180.7L214.6 10.6c2.3-10.8-11.1-17.4-18.6-9.4L24 192h96L85.4 341.4c-2.3 10.8 11.1 17.4 18.6 9.4L296 160z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg fill='%23FFD700' viewBox='0 0 320 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M296 160H180.7L214.6 10.6c2.3-10.8-11.1-17.4-18.6-9.4L24 192h96L85.4 341.4c-2.3 10.8 11.1 17.4 18.6 9.4L296 160z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: 20px;
+  background-position: top center;
+  background-size: 28px;
   color: #0a0a0a;
 }
 
@@ -113,7 +118,7 @@ select.input-field {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background-color: #ddd;
+  background-color: #F4F4F4;
   padding: 10px;
 }
 
@@ -138,7 +143,7 @@ input[type="text"] {
   display: inline-block;
   padding: 10px 20px;
   background-color: #f3f4f6;
-  border: 2px solid #ddd;
+  border: 2px solid #F4F4F4;
   border-radius: 8px;
   cursor: pointer;
   width: 100%;
@@ -161,7 +166,7 @@ input[type="text"] {
   font-family: Arial, sans-serif;
   color: #333;
   line-height: 1.5;
-  max-width: 380px; 
+  max-width: 380px;
 }
 
 .error-message p {
