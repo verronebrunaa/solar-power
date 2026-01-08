@@ -1,6 +1,6 @@
 "use client";
 
-import Cobertura from "@/components/sections/Cobertura";
+import EnergiaRenovável from "@/components/sections/Energia-Renovável";
 import Depoimentos from "@/components/sections/Depoimentos";
 import Duvidas from "@/components/sections/Duvidas";
 import Funciona from "@/components/sections/Funciona";
@@ -17,9 +17,10 @@ export default function HomePage() {
         <Navbar />
         <Hero />
         <Vantagens />
-        <Cobertura />
+        <EnergiaRenovável />
         <Funciona />
         <Simulador />
+        <Depoimentos />
         <Duvidas />
         <Footer />
       </main>

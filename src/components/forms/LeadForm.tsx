@@ -40,8 +40,6 @@ export function LeadForm() {
     e?.preventDefault();
     setIsLoading(true);
     setFieldErrors([]);
-    // console.log("onSubmit chamado com dados:", data);
-    // console.log("Erros do formulário:", errors);
 
     try {
       const formData = new FormData();
@@ -60,7 +58,8 @@ export function LeadForm() {
         formData.append("fatura_energia", file);
       }
 
-      if (documento_frente) formData.append("documento_frente", documento_frente);
+      if (documento_frente)
+        formData.append("documento_frente", documento_frente);
       if (documento_verso) formData.append("documento_verso", documento_verso);
       if (cartao_cnpj) formData.append("cartao_cnpj", cartao_cnpj);
 
@@ -85,7 +84,9 @@ export function LeadForm() {
         alert(
           result.message ||
             `Erro ao enviar os dados. Tente novamente. ${
-              result.fieldErrors?.map((error: string) => `\n- ${error}`).join("") || "Nenhum campo específico."
+              result.fieldErrors
+                ?.map((error: string) => `\n- ${error}`)
+                .join("") || "Nenhum campo específico."
             }`
         );
       }
@@ -143,7 +144,7 @@ export function LeadForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="w-full max-w-[335px] h-auto text-black bg-[#ddd] rounded-[8px] px-[20px] py-[26px] space-y-[20px] mx-auto"
+      className="w-full max-w-[335px] h-auto text-black bg-[#F4F4F4] rounded-[8px] px-[20px] py-[26px] space-y-[20px] mx-auto"
     >
       {step === 1 && (
         <>
@@ -156,7 +157,9 @@ export function LeadForm() {
               type="button"
               onClick={() => setTipo_pessoa("PF")}
               className={`flex-1 py-2 ${
-                tipo_pessoa === "PF" ? "bg-[#94C68A] text-black" : "bg-[#D9D9D9] text-[#757575]"
+                tipo_pessoa === "PF"
+                  ? "bg-[var(--color-primary)] text-black"
+                  : "bg-[#D9D9D9] text-[#757575]"
               } rounded-l-lg`}
             >
               <FaUser className="mr-2 inline" />
@@ -167,7 +170,9 @@ export function LeadForm() {
               type="button"
               onClick={() => setTipo_pessoa("PJ")}
               className={`flex-1 py-2 ${
-                tipo_pessoa === "PJ" ? "bg-[#94C68A] text-black" : "bg-[#D9D9D9] text-[#757575]"
+                tipo_pessoa === "PJ"
+                  ? "bg-[var(--color-primary)] text-black"
+                  : "bg-[#D9D9D9] text-[#757575]"
               } rounded-r-lg`}
             >
               Pessoa Jurídica
@@ -176,13 +181,25 @@ export function LeadForm() {
           </div>
 
           <label htmlFor="nome" className="text-sm mb-1">
-            Seu nome
+            {tipo_pessoa === "PJ" ? "Razão social" : "Nome Completo"}
+            <span className="text-red-500 ml-1">*</span>
           </label>
-          <input placeholder="Digite aqui seu nome" {...register("nome")} className="input border text-black" />
-          {errors.nome && <p className="text-red-500 text-sm">{errors.nome.message}</p>}
+          <input
+            placeholder={
+              tipo_pessoa === "PJ"
+                ? "Digite aqui a razão social"
+                : "Digite seu nome completo"
+            }
+            {...register("nome")}
+            className="input border text-black"
+          />
+          {errors.nome && (
+            <p className="text-red-500 text-sm">{errors.nome.message}</p>
+          )}
 
           <label htmlFor="email" className="text-sm mb-1">
-            Seu email
+            E-mail
+            <span className="text-red-500 ml-1">*</span>
           </label>
           <input
             placeholder="Seu email"
@@ -191,10 +208,13 @@ export function LeadForm() {
             {...register("email")}
             className="input border text-black"
           />
-          {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
+          {errors.email && (
+            <p className="text-red-500 text-sm">{errors.email.message}</p>
+          )}
 
           <label htmlFor="celular" className="text-sm mb-1">
-            Número de celular (WhatsApp)
+            Celular
+            <span className="text-red-500 ml-1">*</span>
           </label>
 
           <input
@@ -206,9 +226,13 @@ export function LeadForm() {
           />
 
           <label htmlFor="concessionaria" className="text-sm mb-1">
-            Sua concessionária de energia
+            Concessionária
+            <span className="text-red-500 ml-1">*</span>
           </label>
-          <select {...register("concessionaria")} className="input border text-black">
+          <select
+            {...register("concessionaria")}
+            className="input border text-black"
+          >
             <option value="">Selecione uma</option>
             {concessionarias.map((concessionaria) => (
               <option key={concessionaria} value={concessionaria}>
@@ -216,37 +240,59 @@ export function LeadForm() {
               </option>
             ))}
           </select>
-          {errors.concessionaria && <p className="text-red-500 text-sm">{errors.concessionaria.message}</p>}
+          {errors.concessionaria && (
+            <p className="text-red-500 text-sm">
+              {errors.concessionaria.message}
+            </p>
+          )}
 
           <p className="text-xs text-black">
-            Ao continuar você concorda em receber contato da Green Energy e com os{" "}
-            <Link href="/termos" className="text-[#94C68A]">
+            Ao continuar você concorda em receber contato da Green Energy e com
+            os{" "}
+            <Link href="/termos" className="text-[var(--color-primary)]">
               Termos de uso
             </Link>{" "}
             e{" "}
-            <Link href="/privacidade" className="text-[#94C68A]">
+            <Link href="/privacidade" className="text-[var(--color-primary)]">
               Política de privacidade.
             </Link>
           </p>
 
-          <p className="text-xs text-black">Para prosseguir no formulário, preencha os campos obrigatórios</p>
+          <p className="text-xs text-black">
+            Para prosseguir no formulário, preencha os campos obrigatórios
+          </p>
 
           <button
             type="button"
             onClick={nextStep}
-            className="bg-[#94C68A] text-black px-6 py-3 rounded-full font-medium disabled:opacity-50 disabled:cursor-not-allowed"
-            disabled={!watch("nome") || !watch("email") || !watch("celular") || !watch("concessionaria")}
+            className="bg-[var(--color-primary)] text-black px-6 py-3 rounded-full font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+            disabled={
+              !watch("nome") ||
+              !watch("email") ||
+              !watch("celular") ||
+              !watch("concessionaria")
+            }
           >
             Comece a economizar{" "}
-            <Image src={"/ArrowCircle.svg"} alt="Seta para direita" width={30} height={20} className="inline" />
+            <Image
+              src={"/ArrowCircle.svg"}
+              alt="Seta para direita"
+              width={30}
+              height={20}
+              className="inline"
+            />
           </button>
         </>
       )}
 
       {step === 2 && (
         <>
-          <label htmlFor="concessionaria-readonly" className="text-sm font-medium text-[#333333] mb-1 block">
-            Sua concessionária de energia <span className="text-red-500">*</span>
+          <label
+            htmlFor="concessionaria-readonly"
+            className="text-sm font-medium text-[#333333] mb-1 block"
+          >
+            Sua concessionária de energia{" "}
+            <span className="text-red-500">*</span>
           </label>
           <input
             id="concessionaria-readonly"
@@ -256,7 +302,10 @@ export function LeadForm() {
             className="w-full border border-[#BDBDBD] rounded-md bg-[#EBEBEB] text-black py-2 cursor-not-allowed"
           />
 
-          <label htmlFor="pdf-password" className="text-sm font-medium text-[#333333] mb-1 block">
+          <label
+            htmlFor="pdf-password"
+            className="text-sm font-medium text-[#333333] mb-1 block"
+          >
             Digite a senha do arquivo do arquivo caso esteja protegido
           </label>
           <input
@@ -267,9 +316,14 @@ export function LeadForm() {
             value={pdfPassword}
             onChange={(e) => setPdfPassword(e.target.value)}
           />
-          <p className="text-xs text-black">A senha do arquivo é necessária para abrir o PDF.</p>
+          <p className="text-xs text-black">
+            A senha do arquivo é necessária para abrir o PDF.
+          </p>
 
-          <label htmlFor="fatura_energia" className="text-sm font-medium text-[#333333] mt-4 mb-1 block">
+          <label
+            htmlFor="fatura_energia"
+            className="text-sm font-medium text-[#333333] mt-4 mb-1 block"
+          >
             Envia sua fatura de energia<span className="text-red-500">*</span>
           </label>
           <input
@@ -295,11 +349,17 @@ export function LeadForm() {
             )}
           </button>
           {errors.fatura_energia?.message && (
-            <p className="text-red-500 text-sm">{String(errors.fatura_energia.message)}</p>
+            <p className="text-red-500 text-sm">
+              {String(errors.fatura_energia.message)}
+            </p>
           )}
-          <p className="text-xs text-black">A fatura deve estar no formato PDF ou imagem.</p>
+          <p className="text-xs text-black">
+            A fatura deve estar no formato PDF ou imagem.
+          </p>
 
-          <p className="text-xs text-black">Para prosseguir no formulário, preencha os campos obrigatórios</p>
+          <p className="text-xs text-black">
+            Para prosseguir no formulário, preencha os campos obrigatórios
+          </p>
 
           <div className="flex justify-between items-center mt-6">
             <button
@@ -313,11 +373,17 @@ export function LeadForm() {
             <button
               type="button"
               onClick={nextStep}
-              className="bg-[#94C68A] text-black px-6 py-3 rounded-full font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+              className="bg-[var(--color-primary)] text-black px-6 py-3 rounded-full font-medium disabled:opacity-50 disabled:cursor-not-allowed"
               disabled={!file}
             >
               Próximo
-              <Image src="/ArrowCircle.svg" alt="Seta para direita" width={30} height={20} className="inline ml-2" />
+              <Image
+                src="/ArrowCircle.svg"
+                alt="Seta para direita"
+                width={30}
+                height={20}
+                className="inline ml-2"
+              />
             </button>
           </div>
         </>
@@ -326,11 +392,15 @@ export function LeadForm() {
       {step === 3 && (
         <div className="md:grid-cols-2 gap-3">
           <div className="text-center mb-4">
-            Ótimo! Sua conta está elegível para receber energia. Preencha as informações adicionais da sua conta para
-            ver quanto será a sua economia.
+            Ótimo! Sua conta está elegível para receber energia. Preencha as
+            informações adicionais da sua conta para ver quanto será a sua
+            economia.
           </div>
           <div>
-            <label htmlFor="consumo_medio" className="text-sm font-medium text-[#333333] block mb-1">
+            <label
+              htmlFor="consumo_medio"
+              className="text-sm font-medium text-[#333333] block mb-1"
+            >
               Consumo médio anual (kWh)
             </label>
 
@@ -346,8 +416,9 @@ export function LeadForm() {
 
             {mostrarTexto && (
               <p className="mt-1 text-sm text-black">
-                O consumo médio é a soma do consumo de energia nos últimos 12 meses, dividido por 12. Para
-                calcular, tenha em mãos a sua fatura de energia ou coloque o consumo da sua última fatura.
+                O consumo médio é a soma do consumo de energia nos últimos 12
+                meses, dividido por 12. Para calcular, tenha em mãos a sua
+                fatura de energia ou coloque o consumo da sua última fatura.
               </p>
             )}
           </div>
@@ -400,7 +471,10 @@ export function LeadForm() {
           </div>*/}
 
           <div>
-            <label htmlFor="numero_cliente" className="text-sm font-medium text-[#333333] block mb-1">
+            <label
+              htmlFor="numero_cliente"
+              className="text-sm font-medium text-[#333333] block mb-1"
+            >
               Número do Cliente <span className="text-red-500">*</span>
             </label>
             <input
@@ -409,11 +483,18 @@ export function LeadForm() {
               className="input border text-black w-full mb-1"
               {...register("numero_cliente")}
             />
-            {errors.numero_cliente && <p className="text-red-500 text-sm mt-1">{errors.numero_cliente.message}</p>}
+            {errors.numero_cliente && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.numero_cliente.message}
+              </p>
+            )}
           </div>
 
           <div>
-            <label htmlFor="numero_instalacao" className="text-sm font-medium text-[#333333] block mb-1">
+            <label
+              htmlFor="numero_instalacao"
+              className="text-sm font-medium text-[#333333] block mb-1"
+            >
               Número de instalação
             </label>
             <input
@@ -438,10 +519,15 @@ export function LeadForm() {
 
           <div className="border-t border-[#BDBDBD] my-4" />
 
-          <div className="text-sm font-bold text-[#333333] block mb-1">Endereço da sua conta</div>
+          <div className="text-sm font-bold text-[#333333] block mb-1">
+            Endereço da sua conta
+          </div>
 
           <div>
-            <label htmlFor="cep" className="text-sm font-medium text-[#333333] block mb-1">
+            <label
+              htmlFor="cep"
+              className="text-sm font-medium text-[#333333] block mb-1"
+            >
               CEP
             </label>
             <input
@@ -452,21 +538,30 @@ export function LeadForm() {
               onChange={handleCepChange}
               className="input border text-black w-full mb-1"
               onPaste={(e) => {
-                const pasted = e.clipboardData.getData("Text").replace(/\D/g, "");
+                const pasted = e.clipboardData
+                  .getData("Text")
+                  .replace(/\D/g, "");
                 if (pasted.length === 8) {
                   e.preventDefault();
-                  handleCepChange({ target: { value: pasted } } as React.ChangeEvent<HTMLInputElement>);
+                  handleCepChange({
+                    target: { value: pasted },
+                  } as React.ChangeEvent<HTMLInputElement>);
                 }
               }}
             />
-            {loading && <p className="text-sm text-black mt-2">Carregando...</p>}
+            {loading && (
+              <p className="text-sm text-black mt-2">Carregando...</p>
+            )}
 
             {error && <p className="text-sm text-red-500 mt-2">{error}</p>}
 
             {address && (
               <div>
                 <div>
-                  <label htmlFor="logradouro" className="text-sm font-medium text-[#333333] block mb-1">
+                  <label
+                    htmlFor="logradouro"
+                    className="text-sm font-medium text-[#333333] block mb-1"
+                  >
                     Logradouro
                   </label>
                   <Controller
@@ -484,7 +579,10 @@ export function LeadForm() {
                 </div>
 
                 <div>
-                  <label htmlFor="numero" className="text-sm font-medium text-[#333333] block mb-1">
+                  <label
+                    htmlFor="numero"
+                    className="text-sm font-medium text-[#333333] block mb-1"
+                  >
                     Número
                   </label>
                   <input
@@ -496,20 +594,31 @@ export function LeadForm() {
                 </div>
 
                 <div>
-                  <label htmlFor="complemento" className="text-sm font-medium text-[#333333] block mb-1">
+                  <label
+                    htmlFor="complemento"
+                    className="text-sm font-medium text-[#333333] block mb-1"
+                  >
                     Complemento
                   </label>
                   <Controller
                     name="complemento"
                     control={control}
                     render={({ field }) => (
-                      <input type="text" id="complemento" className="input border text-black w-full mb-1" {...field} />
+                      <input
+                        type="text"
+                        id="complemento"
+                        className="input border text-black w-full mb-1"
+                        {...field}
+                      />
                     )}
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="bairro" className="text-sm font-medium text-[#333333] block mb-1">
+                  <label
+                    htmlFor="bairro"
+                    className="text-sm font-medium text-[#333333] block mb-1"
+                  >
                     Bairro
                   </label>
                   <Controller
@@ -527,7 +636,10 @@ export function LeadForm() {
                 </div>
 
                 <div>
-                  <label htmlFor="cidade" className="text-sm font-medium text-[#333333] block mb-1">
+                  <label
+                    htmlFor="cidade"
+                    className="text-sm font-medium text-[#333333] block mb-1"
+                  >
                     Cidade
                   </label>
                   <Controller
@@ -546,7 +658,10 @@ export function LeadForm() {
                 </div>
 
                 <div>
-                  <label htmlFor="estado" className="text-sm font-medium text-[#333333] block mb-1">
+                  <label
+                    htmlFor="estado"
+                    className="text-sm font-medium text-[#333333] block mb-1"
+                  >
                     Estado
                   </label>
                   <Controller
@@ -567,7 +682,9 @@ export function LeadForm() {
             )}
           </div>
 
-          <p className="text-xs text-black">Para prosseguir no formulário, preencha os campos obrigatórios</p>
+          <p className="text-xs text-black">
+            Para prosseguir no formulário, preencha os campos obrigatórios
+          </p>
 
           <div className="md:col-span-2 flex flex-col sm:flex-row justify-between items-center mt-6">
             <button
@@ -581,11 +698,17 @@ export function LeadForm() {
             <button
               type="button"
               onClick={nextStep}
-              className="bg-[#94C68A] text-black px-6 py-2 rounded-full font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+              className="bg-[var(--color-primary)] text-black px-6 py-2 rounded-full font-medium disabled:opacity-50 disabled:cursor-not-allowed"
               disabled={!watch("numero_cliente")}
             >
               Próximo
-              <Image src="/ArrowCircle.svg" alt="Seta para direita" width={30} height={20} className="inline ml-2" />
+              <Image
+                src="/ArrowCircle.svg"
+                alt="Seta para direita"
+                width={30}
+                height={20}
+                className="inline ml-2"
+              />
             </button>
           </div>
         </div>
@@ -605,10 +728,15 @@ export function LeadForm() {
                     Olá <strong>{nomeValue}</strong>,
                   </p>
                   <p>
-                    Observando os detalhes de sua conta, percebemos que ainda não podemos concluir seu cadastro. Porém,
-                    saiba que estamos em constante aprimoramento para atender a todos da melhor forma possível.
+                    Observando os detalhes de sua conta, percebemos que ainda
+                    não podemos concluir seu cadastro. Porém, saiba que estamos
+                    em constante aprimoramento para atender a todos da melhor
+                    forma possível.
                   </p>
-                  <p>Agradecemos sua compreensão e paciência durante este processo.</p>
+                  <p>
+                    Agradecemos sua compreensão e paciência durante este
+                    processo.
+                  </p>
                   <p>
                     <strong>Possíveis motivos:</strong>
                   </p>
@@ -618,36 +746,72 @@ export function LeadForm() {
                     <li>• Tarifa popular</li>
                   </ul>
 
-                  <button
-                    type="button"
-                    onClick={prevStep}
-                    className="bg-[#BDBDBD] text-[#525252] mt-5 px-6 py-2 rounded-[30px] w-full sm:w-[148px] h-[46px] flex justify-center items-center font-bold"
-                  >
-                    Voltar
-                  </button>
+                  <div className="flex justify-center mt-4">
+                    <button
+                      type="button"
+                      onClick={prevStep}
+                      className="bg-[#BDBDBD] text-[#525252] mt-5 px-3 py-2 rounded-[30px] w-full sm:w-[148px] h-[46px] flex justify-center items-center font-bold"
+                    >
+                      Voltar
+                    </button>
+
+                    <div className="w-full max-w-7xl flex flex-col items-center mt-3 px-6">
+                      <Link
+                        href="/"
+                        className="inline-block px-6 py-2 rounded-full bg-[var(--color-primary)] text-white font-bold shadow hover:bg-[#1d491d] transition mb-4"
+                      >
+                        Ir para a Home
+                      </Link>
+                    </div>
+                  </div>
                 </div>
               );
             }
 
             return (
               <div className="step-4-container">
-                <h2 className="step-title">Só mais algumas informações para ver o total da sua economia!</h2>
+                <h2 className="step-title">
+                  Só mais algumas informações para ver o total da sua economia!
+                </h2>
 
                 <div className="form-group">
                   {tipo_pessoa === "PJ" && (
                     <>
-                      <label htmlFor="razaoSocial" className="text-sm font-medium text-[#333333] block mb-1">
+                      <label
+                        htmlFor="razaoSocial"
+                        className="text-sm font-medium text-[#333333] block mb-1"
+                      >
                         Razão Social
                       </label>
-                      <input type="text" id="razaoSocial" className="input-field" {...register("razaoSocial")} />
+                      <input
+                        type="text"
+                        id="razaoSocial"
+                        className="input-field"
+                        {...register("razaoSocial")}
+                      />
 
-                      <label htmlFor="cnpj" className="text-sm font-medium text-[#333333] block mt-2 mb-1">
+                      <label
+                        htmlFor="cnpj"
+                        className="text-sm font-medium text-[#333333] block mt-2 mb-1"
+                      >
                         CNPJ <span className="text-red-500">*</span>
                       </label>
-                      <input type="text" id="cnpj" className="input-field" {...register("cnpj")} />
-                      {errors.cnpj && <p className="text-red-500 text-sm mt-1">{errors.cnpj.message}</p>}
+                      <input
+                        type="text"
+                        id="cnpj"
+                        className="input-field"
+                        {...register("cnpj")}
+                      />
+                      {errors.cnpj && (
+                        <p className="text-red-500 text-sm mt-1">
+                          {errors.cnpj.message}
+                        </p>
+                      )}
 
-                      <label htmlFor="documento_frente" className="text-sm font-medium text-[#333333] block mt-2 mb-1">
+                      <label
+                        htmlFor="documento_frente"
+                        className="text-sm font-medium text-[#333333] block mt-2 mb-1"
+                      >
                         Cartão CNPJ <span className="text-red-500">*</span>
                       </label>
                       <div className="custom-file-container">
@@ -655,26 +819,44 @@ export function LeadForm() {
                           type="file"
                           id="documento_verso"
                           accept=".jpg,.jpeg,.png,.pdf"
-                          onChange={(e) => handleFileChange(e, setCartao_cnpj, "cartao_cnpj")}
+                          onChange={(e) =>
+                            handleFileChange(e, setCartao_cnpj, "cartao_cnpj")
+                          }
                           className="file-input"
                         />
-                        <span className="custom-file-label">{cartao_cnpj ? cartao_cnpj.name : "Anexar frente"}</span>
+                        <span className="custom-file-label">
+                          {cartao_cnpj ? cartao_cnpj.name : "Anexar frente"}
+                        </span>
                       </div>
-                      {!cartao_cnpj && <p className="text-red-500 text-sm mt-1">Frente do documento é obrigatória</p>}
+                      {!cartao_cnpj && (
+                        <p className="text-red-500 text-sm mt-1">
+                          Frente do documento é obrigatória
+                        </p>
+                      )}
 
                       <label htmlFor="data_abertura">
                         Data de Abertura <span className="text-red-500">*</span>
                       </label>
-                      <input type="date" id="data_abertura" className="input-field" {...register("data_abertura")} />
+                      <input
+                        type="date"
+                        id="data_abertura"
+                        className="input-field"
+                        {...register("data_abertura")}
+                      />
                       {errors.data_abertura && (
-                        <p className="text-red-500 text-sm mt-1">{errors.data_abertura.message}</p>
+                        <p className="text-red-500 text-sm mt-1">
+                          {errors.data_abertura.message}
+                        </p>
                       )}
                     </>
                   )}
 
                   {tipo_pessoa === "PF" && (
                     <>
-                      <label htmlFor="documento_frente" className="text-sm font-medium text-[#333333] block mt-2 mb-1">
+                      <label
+                        htmlFor="documento_frente"
+                        className="text-sm font-medium text-[#333333] block mt-2 mb-1"
+                      >
                         Documento de identificação (Frente)
                       </label>
                       <div className="custom-file-container">
@@ -682,19 +864,32 @@ export function LeadForm() {
                           type="file"
                           id="documento_frente"
                           accept=".jpg,.jpeg,.png,.pdf"
-                          onChange={(e) => handleFileChange(e, setDocumento_frente, "documento_frente")}
+                          onChange={(e) =>
+                            handleFileChange(
+                              e,
+                              setDocumento_frente,
+                              "documento_frente"
+                            )
+                          }
                           className="file-input"
                         />
                         <span className="custom-file-label">
-                          {documento_frente ? documento_frente.name : "Anexar frente"}
+                          {documento_frente
+                            ? documento_frente.name
+                            : "Anexar frente"}
                         </span>
                       </div>
                       {!documento_frente && (
-                        <p className="text-red-500 text-sm mt-1">Frente do documento é obrigatória</p>
+                        <p className="text-red-500 text-sm mt-1">
+                          Frente do documento é obrigatória
+                        </p>
                       )}
 
                       <div className="form-group mt-4 mb-1">
-                        <label htmlFor="documento_verso" className="text-sm font-medium text-[#333333] block mb-1">
+                        <label
+                          htmlFor="documento_verso"
+                          className="text-sm font-medium text-[#333333] block mb-1"
+                        >
                           Documento de identificação (Verso)
                         </label>
                         <div className="custom-file-container">
@@ -702,11 +897,19 @@ export function LeadForm() {
                             type="file"
                             id="documento_verso"
                             accept=".jpg,.jpeg,.png,.pdf"
-                            onChange={(e) => handleFileChange(e, setDocumento_verso, "documento_verso")}
+                            onChange={(e) =>
+                              handleFileChange(
+                                e,
+                                setDocumento_verso,
+                                "documento_verso"
+                              )
+                            }
                             className="file-input"
                           />
                           <span className="custom-file-label">
-                            {documento_verso ? documento_verso.name : "Anexar verso"}
+                            {documento_verso
+                              ? documento_verso.name
+                              : "Anexar verso"}
                           </span>
                         </div>
                       </div>
@@ -721,10 +924,16 @@ export function LeadForm() {
                           {...register("cpf")}
                         />
                       </div>
-                      {errors.cpf && <p className="text-red-500 mt-1">{errors.cpf.message}</p>}
+                      {errors.cpf && (
+                        <p className="text-red-500 mt-1">
+                          {errors.cpf.message}
+                        </p>
+                      )}
 
                       <div className="form-group">
-                        <label htmlFor="nomeCompleto">Nome completo do Cliente</label>
+                        <label htmlFor="nomeCompleto">
+                          Nome completo do Cliente
+                        </label>
                         <input
                           type="text"
                           id="nomeCompleto"
@@ -736,7 +945,8 @@ export function LeadForm() {
                       </div>
                       <div className="form-group">
                         <label htmlFor="nascimento">
-                          Data de Nascimento <span className="text-red-500">*</span>
+                          Data de Nascimento{" "}
+                          <span className="text-red-500">*</span>
                         </label>
                         <input
                           type="date"
@@ -746,7 +956,9 @@ export function LeadForm() {
                         />
                       </div>
                       {errors.nascimento && (
-                        <p className="text-red-500 text-sm mt-1">{errors.nascimento.message}</p>
+                        <p className="text-red-500 text-sm mt-1">
+                          {errors.nascimento.message}
+                        </p>
                       )}
 
                       <div className="form-group">
@@ -775,7 +987,9 @@ export function LeadForm() {
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="celular">Número de celular (WhatsApp)</label>
+                    <label htmlFor="celular">
+                      Número de celular (WhatsApp)
+                    </label>
                     <input
                       type="text"
                       id="celular"
@@ -834,9 +1048,13 @@ export function LeadForm() {
                       type="submit"
                       onClick={handleSubmit(onSubmit, onError)}
                       disabled={isLoading}
-                      className="bg-[#94C68A] text-black px-6 py-2 rounded-[30px] w-full sm:w-[148px] h-[46px] font-bold flex justify-center items-center disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="bg-[var(--color-primary)] text-black px-6 py-2 rounded-[30px] w-full sm:w-[148px] h-[46px] font-bold flex justify-center items-center disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      {isLoading ? <CgSpinnerAlt className="animate-spin" /> : "Enviar"}
+                      {isLoading ? (
+                        <CgSpinnerAlt className="animate-spin" />
+                      ) : (
+                        "Enviar"
+                      )}
                     </button>
                   </div>
                 </div>

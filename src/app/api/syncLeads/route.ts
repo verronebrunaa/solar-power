@@ -53,8 +53,8 @@ async function formatLead(lead: Record<string, AttributeValue>) {
 
 async function sendLeadToExternalAPI(leadData: Record<string, unknown>, isUpdate = false) {
   const url = isUpdate
-    ? "https://painel.livenergy.com.br/api/update_lead"
-    : "https://painel.livenergy.com.br/api/new_lead";
+    ? "https://painel.greenenergy.com.br/api/update_lead"
+    : "https://painel.greenenergy.com.br/api/new_lead";
 
   const res = await fetch(url, {
     method: "POST",

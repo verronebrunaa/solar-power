@@ -113,7 +113,7 @@ export async function POST(req: NextRequest) {
     setImmediate(async () => {
       try {
         const leadForAPI = { ...leadData, fatura_url: fileUrl, documento_frente_url: docFrenteUrl, documento_verso_url: docVersoUrl, cartao_cnpj_url: cartaoCnpjUrl, createdAt: new Date().toISOString() };
-        const res = await fetch("https://painel.livenergy.com.br/api/new_lead", {
+        const res = await fetch("https://painel.greenenergy.com.br/api/new_lead", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(leadForAPI),
