@@ -3,52 +3,52 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const testimonials = [
   {
-    text: "Lorem ipsum dolor sit amet consectetur. Ligula vulputate arcu amet libero senectus viverra. Nunc lectus cursus cras tincidunt amet malesuada. Aliquam a augue.",
-    name: "Marcelo Campello",
-    amount: "R$ 3.250,00",
-    color: "bg-[#94C68A]",
+    text: "Economizei mais de 18% na conta de luz do meu restaurante! Recomendo a todos que querem economizar sem dor de cabeça.",
+    name: "Ana Souza",
+    amount: "R$ 1.850,00",
+    color: "bg-[var(--color-primary)]",
   },
   {
-    text: "Lorem ipsum dolor sit amet consectetur. Ultrices amet pellentesque donec fringilla et lorem id sit. Nibh eu sed id ultrices curabitur ut. Porttitor elementum dolor elementum magna laoreet interdum.",
-    name: "Marcelo Campello",
-    amount: "R$ 3.250,00",
-    color: "bg-[#94C68A]",
+    text: "Minha empresa reduziu custos e ainda contribui para o meio ambiente. Energia renovável é o futuro!",
+    name: "Carlos Lima",
+    amount: "R$ 2.430,00",
+    color: "bg-[var(--color-secondary)]",
   },
   {
-    text: "Lorem ipsum dolor sit amet consectetur. Risus nunc vulputate vestibulum vulputate aenean quam platea. Praesent massa cursus auctor amet amet in.",
-    name: "Marcelo Campello",
-    amount: "R$ 3.250,00",
-    color: "bg-[#94C68A]",
+    text: "Achei que seria complicado, mas foi tudo digital e rápido. Estou economizando todo mês.",
+    name: "Juliana Martins",
+    amount: "R$ 1.120,00",
+    color: "bg-[var(--color-highlight)]",
   },
   {
-    text: "Lorem ipsum dolor sit amet consectetur. Mauris faucibus congue id quisque ultrices rhoncus. Risus neque dictum tincidunt porttitor justo nulla felis neque.",
-    name: "Marcelo Campello",
-    amount: "R$ 3.250,00",
-    color: "bg-[#94C68A]",
+    text: "A energia renovável trouxe mais valor para minha casa e ainda reduziu minha conta.",
+    name: "Roberto Silva",
+    amount: "R$ 980,00",
+    color: "bg-[var(--color-alternative)]",
   },
   {
-    text: "Lorem ipsum dolor sit amet consectetur. Mauris faucibus congue id quisque ultrices rhoncus. Risus neque dictum tincidunt porttitor justo nulla felis neque.",
-    name: "Marcelo Campello",
-    amount: "R$ 3.250,00",
-    color: "bg-[#5381BD]",
+    text: "O atendimento foi excelente e a economia é real. Recomendo para todos os meus amigos!",
+    name: "Fernanda Costa",
+    amount: "R$ 1.670,00",
+    color: "bg-[var(--color-primary)]",
   },
   {
-    text: "Lorem ipsum dolor sit amet consectetur. Mauris faucibus congue id quisque ultrices rhoncus. Risus neque dictum tincidunt porttitor justo nulla felis neque.",
-    name: "Marcelo Campello",
-    amount: "R$ 3.250,00",
-    color: "bg-sky-400",
+    text: "Minha loja ficou mais sustentável e ainda economizo dinheiro. Vale muito a pena!",
+    name: "Eduardo Pereira",
+    amount: "R$ 2.050,00",
+    color: "bg-[var(--color-secondary)]",
   },
   {
-    text: "Lorem ipsum dolor sit amet consectetur. Mauris faucibus congue id quisque ultrices rhoncus. Risus neque dictum tincidunt porttitor justo nulla felis neque.",
-    name: "Marcelo Campello",
-    amount: "R$ 3.250,00",
-    color: "bg-sky-400",
+    text: "A Green Energy facilitou tudo, não precisei investir nada e já vejo o desconto na conta.",
+    name: "Patrícia Almeida",
+    amount: "R$ 1.340,00",
+    color: "bg-[var(--color-highlight)]",
   },
   {
-    text: "Lorem ipsum dolor sit amet consectetur. Mauris faucibus congue id quisque ultrices rhoncus. Risus neque dictum tincidunt porttitor justo nulla felis neque.",
-    name: "Marcelo Campello",
-    amount: "R$ 3.250,00",
-    color: "bg-sky-400",
+    text: "Economia garantida e sem burocracia. Energia renovável é a melhor escolha!",
+    name: "João Batista",
+    amount: "R$ 1.900,00",
+    color: "bg-[var(--color-alternative)]",
   },
 ];
 
@@ -57,20 +57,20 @@ export default function Depoimentos() {
   const visibleCount = 5;
 
   const handlePrev = () => {
-    setStartIndex((prev) => Math.max(prev - 1, 0));
-  };
-
-  const handleNext = () => {
-    setStartIndex((prev) =>
-      Math.min(prev + 1, testimonials.length - visibleCount)
+    setStartIndex(
+      (prev) => (prev - 1 + testimonials.length) % testimonials.length
     );
   };
 
+  const handleNext = () => {
+    setStartIndex((prev) => (prev + 1) % testimonials.length);
+  };
+
   return (
-    <div id="depoimentos" className="px-16 py-10 bg-[#ddd]">
+    <div id="depoimentos" className="px-16 py-10 bg-[#F4F4F4]">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <p className="text-sm text-blue-500 font-semibold uppercase mb-1">
+          <p className="text-sm text-[var(--color-secondary)] font-semibold uppercase mb-1">
             Depoimentos
           </p>
           <h2 className="text-2xl font-bold text-gray-900 max-w-xl">
@@ -80,13 +80,13 @@ export default function Depoimentos() {
         <div className="flex items-center gap-2">
           <button
             onClick={handlePrev}
-            className="p-2 bg-[#ddd] rounded-full shadow hover:bg-gray-100"
+            className="p-2 bg-[var(--color-secondary)] rounded-full shadow hover:bg-[var(--color-alternative)]"
           >
             <FaChevronLeft />
           </button>
           <button
             onClick={handleNext}
-            className="p-2 bg-[#ddd] rounded-full shadow hover:bg-gray-100"
+            className="p-2 bg-[var(--color-secondary)] rounded-full shadow hover:bg-[var(--color-alternative)]"
           >
             <FaChevronRight />
           </button>
@@ -95,19 +95,22 @@ export default function Depoimentos() {
 
       <div className="relative">
         <div className="flex gap-4 overflow-hidden transition-all duration-300">
-          {testimonials
-            .slice(startIndex, startIndex + visibleCount)
-            .map((t, i) => (
+          {[...Array(visibleCount)].map((_, i) => {
+            const idx = (startIndex + i) % testimonials.length;
+            const t = testimonials[idx];
+            return (
               <div
                 key={i}
                 className={`rounded-xl shadow-md p-4 flex flex-col justify-between w-full max-w-sm ${t.color}`}
+                style={{ minHeight: 240, maxHeight: 240, height: 240, display: "flex", flexDirection: "column", justifyContent: "space-between" }}
               >
                 <p className="text-sm text-gray-800 mb-4">{t.text}</p>
                 <p className="font-semibold text-black mb-2">{t.name}</p>
                 <p className="text-sm text-gray-700">Já economizou</p>
                 <p className="font-bold text-lg text-black">{t.amount}</p>
               </div>
-            ))}
+            );
+          })}
         </div>
       </div>
     </div>

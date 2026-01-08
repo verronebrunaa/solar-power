@@ -44,7 +44,7 @@ export default function Duvidas() {
       className="max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-16 mb-6"
     >
       <div className="md:w-1/3">
-        <h4 className="text-[#94C68A] uppercase font-semibold tracking-wide text-sm mb-2">
+        <h4 className="text-[var(--color-highlight)] uppercase font-semibold tracking-wide text-sm mb-2">
           DÚVIDAS
         </h4>
         <h2 className="text-5xl font-bold text-black">Perguntas e respostas</h2>
@@ -54,7 +54,7 @@ export default function Duvidas() {
         {perguntasERespostas.map((item, index) => (
           <div
             key={index}
-            className="border border-[#94C68A] rounded-md bg-[#ddd] transition-all"
+            className="border border-[var(--color-primary)] rounded-md bg-[#F4F4F4] transition-all"
           >
             <button
               className="w-full text-left text-black p-4 flex justify-between items-center font-semibold text-sm"
@@ -62,9 +62,9 @@ export default function Duvidas() {
             >
               {item.pergunta}
               {aberta === index ? (
-                <GoDash size={18} className="text-[#94C68A]" />
+                <GoDash size={18} className="text-[var(--color-primary)]" />
               ) : (
-                <FaPlus size={18} className="text-[#94C68A]" />
+                <FaPlus size={18} className="text-[var(--color-primary)]" />
               )}
             </button>
             {aberta === index && item.resposta && (
