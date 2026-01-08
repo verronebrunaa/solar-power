@@ -10,12 +10,25 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#061121] text-[#ddd] pt-12 pb-6 rounded-t-4xl">
+    <footer className="w-full bg-[#061121] text-[#F4F4F4] pt-12 pb-6 rounded-t-4xl">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div className="flex flex-col items-start">
-            <div className="mb-4 relative w-full h-16">
-              <Image src="/Logo-Solstice-Power.svg" alt="Logo Green Energy" fill style={{ objectFit: 'contain' }} />
+            <div
+              className="mb-4 relative w-full"
+              style={{ height: 80, maxWidth: 120 }}
+            >
+              <Image
+                src="/Logo-Green-Energy.png"
+                alt="Logo Green Energy"
+                width={120}
+                height={80}
+                style={{
+                  objectFit: "contain",
+                  height: "200px",
+                  width: "180px",
+                }}
+              />
             </div>
           </div>
 
@@ -47,25 +60,64 @@ export default function Footer() {
           <div className="text-sm">
             <h4 className="font-bold mb-2">REDES SOCIAIS</h4>
             <div className="flex gap-4 mb-4">
-              <FaInstagram className="w-5 h-5 hover:text-[#1d491dff]" />
-              <FaWhatsapp className="w-5 h-5 hover:text-[#1d491dff]" />
-              <FaYoutube className="w-5 h-5 hover:text-[#1d491dff]" />
-              <FaLinkedinIn className="w-5 h-5 hover:text-[#1d491dff]" />
-              <FaFacebookF className="w-5 h-5 hover:text-[#1d491dff]" />
+              <FaInstagram className="w-5 h-5 hover:text-[var(--color-primary)]" />
+              <FaWhatsapp className="w-5 h-5 hover:text-[var(--color-primary)]" />
+              <FaYoutube className="w-5 h-5 hover:text-[var(--color-primary)]" />
+              <FaLinkedinIn className="w-5 h-5 hover:text-[var(--color-primary)]" />
+              <FaFacebookF className="w-5 h-5 hover:text-[var(--color-primary)]" />
             </div>
 
-            {/*<h4 className="font-bold mb-2">PARCEIROS</h4>
+            <h4 className="font-bold mb-2">PARCEIROS</h4>
             <div className="flex gap-4 items-center flex-wrap mb-2">
-              <Image src="/concessionarias/Light.png" alt="Light" width={50} height={30} />
-              <Image src="/concessionarias/Cemig.svg" alt="CEMIG" width={50} height={30} />
-              <Image src="/concessionarias/NeoenergiaElektro.png" alt="Neoenergia Elektro" width={50} height={30} />
-              <Image src="/concessionarias/Energisa.png" alt="Energisa" width={50} height={40} />
-              <Image src="/concessionarias/Copel.png" alt="Copel" width={50} height={30} />
-              <Image src="/concessionarias/CPFLPaulista.png" alt="CPFL Paulista" width={50} height={30} />
-              <Image src="/concessionarias/CPFLPiratininga.png" alt="CPFL Piratininga" width={50} height={30} />
-              <Image src="/concessionarias/Enel.png" alt="Enel" width={50} height={30} />
+              <Image
+                src="/concessionarias/Light.png"
+                alt="Light"
+                width={50}
+                height={30}
+              />
+              <Image
+                src="/concessionarias/Cemig.svg"
+                alt="CEMIG"
+                width={50}
+                height={30}
+              />
+              <Image
+                src="/concessionarias/NeoenergiaElektro.png"
+                alt="Neoenergia Elektro"
+                width={50}
+                height={30}
+              />
+              <Image
+                src="/concessionarias/Energisa.png"
+                alt="Energisa"
+                width={50}
+                height={40}
+              />
+              <Image
+                src="/concessionarias/Copel.png"
+                alt="Copel"
+                width={50}
+                height={30}
+              />
+              <Image
+                src="/concessionarias/CPFLPaulista.png"
+                alt="CPFL Paulista"
+                width={50}
+                height={30}
+              />
+              <Image
+                src="/concessionarias/CPFLPiratininga.png"
+                alt="CPFL Piratininga"
+                width={50}
+                height={30}
+              />
+              <Image
+                src="/concessionarias/Enel.png"
+                alt="Enel"
+                width={50}
+                height={30}
+              />
             </div>
-            */}
           </div>
         </div>
 
@@ -77,13 +129,22 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Green Energy. Todos os direitos
             reservados.
           </p>
-          <p> Desenvolvido por <a href="https://verronebruna.vercel.app/" className="text-[#94C68A]">Bruna Verrone</a></p>
+          <p>
+            {" "}
+            Desenvolvido por{" "}
+            <a
+              href="https://verronebruna.vercel.app/"
+              className="text-[var(--color-primary)]"
+            >
+              Bruna Verrone
+            </a>
+          </p>
           <div className="flex gap-4">
-            <a href="/politica-de-privacidade" className="text-[#94C68A]">
+            <a href="/politica-de-privacidade" className="text-[var(--color-primary)]">
               Política de privacidade
             </a>
             |{" "}
-            <a href="/politica-de-cookies" className="text-[#94C68A]">
+            <a href="/politica-de-cookies" className="text-[var(--color-primary)]">
               Política de Cookies
             </a>
           </div>
