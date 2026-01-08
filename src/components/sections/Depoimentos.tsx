@@ -6,13 +6,13 @@ const testimonials = [
     text: "Lorem ipsum dolor sit amet consectetur. Ligula vulputate arcu amet libero senectus viverra. Nunc lectus cursus cras tincidunt amet malesuada. Aliquam a augue.",
     name: "Marcelo Campello",
     amount: "R$ 3.250,00",
-    color: "bg-[#FAE34C]",
+    color: "bg-[#94C68A]",
   },
   {
     text: "Lorem ipsum dolor sit amet consectetur. Ultrices amet pellentesque donec fringilla et lorem id sit. Nibh eu sed id ultrices curabitur ut. Porttitor elementum dolor elementum magna laoreet interdum.",
     name: "Marcelo Campello",
     amount: "R$ 3.250,00",
-    color: "bg-[#D6DE69]",
+    color: "bg-[#94C68A]",
   },
   {
     text: "Lorem ipsum dolor sit amet consectetur. Risus nunc vulputate vestibulum vulputate aenean quam platea. Praesent massa cursus auctor amet amet in.",
@@ -24,7 +24,7 @@ const testimonials = [
     text: "Lorem ipsum dolor sit amet consectetur. Mauris faucibus congue id quisque ultrices rhoncus. Risus neque dictum tincidunt porttitor justo nulla felis neque.",
     name: "Marcelo Campello",
     amount: "R$ 3.250,00",
-    color: "bg-[#4CAACE]",
+    color: "bg-[#94C68A]",
   },
   {
     text: "Lorem ipsum dolor sit amet consectetur. Mauris faucibus congue id quisque ultrices rhoncus. Risus neque dictum tincidunt porttitor justo nulla felis neque.",
@@ -67,14 +67,14 @@ export default function Depoimentos() {
   };
 
   return (
-    <div id="depoimentos" className="px-16 py-10 bg-[#ECECEC]">
+    <div id="depoimentos" className="px-16 py-10 bg-white">
       <div className="flex items-center justify-between mb-6">
         <div>
           <p className="text-sm text-blue-500 font-semibold uppercase mb-1">
             Depoimentos
           </p>
           <h2 className="text-2xl font-bold text-gray-900 max-w-xl">
-            Alguns clientes que estão economizando com a Solstice Power
+            Alguns clientes que estão economizando com a Green Energy
           </h2>
         </div>
         <div className="flex items-center gap-2">

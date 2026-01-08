@@ -10,25 +10,25 @@ export function CadastroSection() {
       <div className="w-full md:w-1/2 text-center md:text-left">
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src="/Logo-Solstice-Power.png"
-            alt="Logo Solstice Power"
+            src="/Logo-Solstice-Power.svg"
+            alt="Logo Green Energy"
             className="mb-6 mx-auto md:mx-0"
             width={200}
             height={50}
           />
         </Link>
 
-        <h1 className="text-5xl md:text-5xl font-extrabold text-[#0B1627] mb-4 leading-tight">
+        <h1 className="text-5xl md:text-5xl font-extrabold text-black mb-4 leading-tight">
           Economize até
           <br />
-          <span className="text-[#4CAACE] text-[128px] leading-[85px] italic">20%</span>
+          <span className="text-[#94C68A] text-[128px] leading-[85px] italic">20%</span>
           <br />
           na conta de luz
         </h1>
 
-        <p className="text-2xl font-semibold text-[#0B1627] mb-3">Comece agora a pagar menos todo mês:</p>
+        <p className="text-2xl font-semibold text-black mb-3">Comece agora a pagar menos todo mês:</p>
 
-        <ul className="space-y-3 text-base text-[#0B1627]">
+        <ul className="space-y-3 text-base text-black">
           <li className="flex items-start gap-2">
             <BsCheck2Circle className="text-[#94C68A] w-10 h-10 mt-1.5" />
             <span>

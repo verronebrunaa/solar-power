@@ -129,6 +129,7 @@ export function LeadForm() {
   const concessionarias = [
     "CEMIG",
     "Enel RJ",
+    "Enel SP",
     "Energisa (MG/RJ)",
     "Energisa (MS)",
     "Energisa Sul Sudeste (SP/MG/PR)",
@@ -155,7 +156,7 @@ export function LeadForm() {
               type="button"
               onClick={() => setTipo_pessoa("PF")}
               className={`flex-1 py-2 ${
-                tipo_pessoa === "PF" ? "bg-[#FAE34C] text-black" : "bg-[#D9D9D9] text-[#757575]"
+                tipo_pessoa === "PF" ? "bg-[#94C68A] text-black" : "bg-[#D9D9D9] text-[#757575]"
               } rounded-l-lg`}
             >
               <FaUser className="mr-2 inline" />
@@ -166,7 +167,7 @@ export function LeadForm() {
               type="button"
               onClick={() => setTipo_pessoa("PJ")}
               className={`flex-1 py-2 ${
-                tipo_pessoa === "PJ" ? "bg-[#FAE34C] text-black" : "bg-[#D9D9D9] text-[#757575]"
+                tipo_pessoa === "PJ" ? "bg-[#94C68A] text-black" : "bg-[#D9D9D9] text-[#757575]"
               } rounded-r-lg`}
             >
               Pessoa Jurídica
@@ -218,12 +219,12 @@ export function LeadForm() {
           {errors.concessionaria && <p className="text-red-500 text-sm">{errors.concessionaria.message}</p>}
 
           <p className="text-xs text-black">
-            Ao continuar você concorda em receber contato da Solstice Power e com os{" "}
-            <Link href="/termos" className="text-[#4CAACE]">
+            Ao continuar você concorda em receber contato da Green Energy e com os{" "}
+            <Link href="/termos" className="text-[#94C68A]">
               Termos de uso
             </Link>{" "}
             e{" "}
-            <Link href="/privacidade" className="text-[#4CAACE]">
+            <Link href="/privacidade" className="text-[#94C68A]">
               Política de privacidade.
             </Link>
           </p>
@@ -233,7 +234,7 @@ export function LeadForm() {
           <button
             type="button"
             onClick={nextStep}
-            className="bg-[#4CAACE] text-[#0B1627] px-6 py-3 rounded-full font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+            className="bg-[#94C68A] text-black px-6 py-3 rounded-full font-medium disabled:opacity-50 disabled:cursor-not-allowed"
             disabled={!watch("nome") || !watch("email") || !watch("celular") || !watch("concessionaria")}
           >
             Comece a economizar{" "}
@@ -312,7 +313,7 @@ export function LeadForm() {
             <button
               type="button"
               onClick={nextStep}
-              className="bg-[#4CAACE] text-[#0B1627] px-6 py-3 rounded-full font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+              className="bg-[#94C68A] text-black px-6 py-3 rounded-full font-medium disabled:opacity-50 disabled:cursor-not-allowed"
               disabled={!file}
             >
               Próximo
@@ -580,7 +581,7 @@ export function LeadForm() {
             <button
               type="button"
               onClick={nextStep}
-              className="bg-[#4CAACE] text-[#0B1627] px-6 py-2 rounded-full font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+              className="bg-[#94C68A] text-black px-6 py-2 rounded-full font-medium disabled:opacity-50 disabled:cursor-not-allowed"
               disabled={!watch("numero_cliente")}
             >
               Próximo
@@ -833,7 +834,7 @@ export function LeadForm() {
                       type="submit"
                       onClick={handleSubmit(onSubmit, onError)}
                       disabled={isLoading}
-                      className="bg-[#49BDF4] text-[#0B1627] px-6 py-2 rounded-[30px] w-full sm:w-[148px] h-[46px] font-bold flex justify-center items-center disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="bg-[#49BDF4] text-black px-6 py-2 rounded-[30px] w-full sm:w-[148px] h-[46px] font-bold flex justify-center items-center disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {isLoading ? <CgSpinnerAlt className="animate-spin" /> : "Enviar"}
                     </button>

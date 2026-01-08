@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import {
   FaInstagram,
@@ -14,19 +13,15 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div className="flex flex-col items-start">
-            <Image
-              src="/Logo-Solstice-Power.png"
-              alt="Logo Solstice Power"
-              width={140}
-              height={60}
-              className="mb-4"
-            />
+            <div className="mb-4">
+              <img src="/Logo-Solstice-Power.svg" alt="Logo Green Energy" style={{ width: '100%', height: '100%' }} />
+            </div>
           </div>
 
           <div className="text-sm flex flex-col justify-between">
             <div>
               <h4 className="font-bold mb-2">CONTATO</h4>
-              <p>contato@livenergy.com.br</p>
+              <p>contato@greenenergy.com.br</p>
               <Link href="https://wa.me/5515974066886">
                 WhatsApp: +55 XX X XXXX-XXXX
               </Link>
@@ -51,11 +46,11 @@ export default function Footer() {
           <div className="text-sm">
             <h4 className="font-bold mb-2">REDES SOCIAIS</h4>
             <div className="flex gap-4 mb-4">
-              <FaInstagram className="w-5 h-5 hover:text-[#19abcf]" />
-              <FaWhatsapp className="w-5 h-5 hover:text-[#19abcf]" />
-              <FaYoutube className="w-5 h-5 hover:text-[#19abcf]" />
-              <FaLinkedinIn className="w-5 h-5 hover:text-[#19abcf]" />
-              <FaFacebookF className="w-5 h-5 hover:text-[#19abcf]" />
+              <FaInstagram className="w-5 h-5 hover:text-[#1d491dff]" />
+              <FaWhatsapp className="w-5 h-5 hover:text-[#1d491dff]" />
+              <FaYoutube className="w-5 h-5 hover:text-[#1d491dff]" />
+              <FaLinkedinIn className="w-5 h-5 hover:text-[#1d491dff]" />
+              <FaFacebookF className="w-5 h-5 hover:text-[#1d491dff]" />
             </div>
 
             {/*<h4 className="font-bold mb-2">PARCEIROS</h4>
@@ -73,20 +68,21 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-[#19abcf] my-6"></div>
+        <div className="border-t border-[#1d491dff] my-6"></div>
 
         <div className="flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 gap-2">
           <p>CNPJ: xx.xxx.xxx/xxxx-xx</p>
           <p>
-            &copy; {new Date().getFullYear()} Solstice Power. Todos os direitos
+            &copy; {new Date().getFullYear()} Green Energy. Todos os direitos
             reservados.
           </p>
+          <p> Desenvolvido por <a href="https://verronebruna.vercel.app/" className="text-[#94C68A]">Bruna Verrone</a></p>
           <div className="flex gap-4">
-            <a href="/politica-de-privacidade" className="text-[#4CAACE]">
+            <a href="/politica-de-privacidade" className="text-[#94C68A]">
               Política de privacidade
             </a>
             |{" "}
-            <a href="/politica-de-cookies" className="text-[#4CAACE]">
+            <a href="/politica-de-cookies" className="text-[#94C68A]">
               Política de Cookies
             </a>
           </div>

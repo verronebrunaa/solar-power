@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import ActionButton from "../buttons/ActionButton";
 
 const sections = ["vantagens", "cobertura", "como-funciona", "simulador", "dúvidas"];
@@ -36,7 +35,9 @@ const Navbar = () => {
       <nav className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
         <div className="flex items-center">
           <Link href="/" className="flex items-center gap-2">
-            <Image src="/Logo-Solstice-Power.png" alt="Logo Solstice Power" width={60} height={24} />
+            <div style={{ width: 60, height: 24 }}>
+              <img src="/Logo-Solstice-Power.svg" alt="Logo Green Energy" style={{ width: '100%', height: '100%' }} />
+            </div>
           </Link>
         </div>
 
@@ -46,7 +47,7 @@ const Navbar = () => {
               <Link
                 href={`#${sec}`}
                 className={`transition-colors ${
-                  activeSection === sec ? "text-[#FAE34C]" : "text-[#94C68A] hover:text-[#FAE34C]"
+                  activeSection === sec ? "text-[#94C68A]" : "text-[#94C68A] hover:text-[#94C68A]"
                 }`}
               >
                 {sec.toUpperCase().replace("-", " ")}

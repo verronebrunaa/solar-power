@@ -32,13 +32,13 @@ const steps = [
   {
     key: "usina",
     icon: "/placas.svg",
-    color: "bg-[#FAE34C]",
+    color: "bg-[#94C68A]",
     description: <p>Nossas usinas solares produzem energia limpa e renovável.</p>,
   },
   {
     key: "rede",
     icon: "/energia.svg",
-    color: "bg-[#D6DE69]",
+    color: "bg-[#94C68A]",
     description: (
       <>
         <p>Essa energia é enviada para a rede de distribuição que atende sua residência ou comércio.</p>
@@ -59,7 +59,7 @@ const steps = [
       <>
         <p>
           E chega em sua casa em forma de créditos de energia, que se transformam em{" "}
-          <span className="text-[#4CAACE] font-bold italic">desconto direto na sua conta.</span>
+          <span className="text-[#94C68A] font-bold italic">desconto direto na sua conta.</span>
         </p>
         <ActionButton label="Quero economizar" />
       </>
@@ -69,10 +69,10 @@ const steps = [
 
 export default function Funciona() {
   return (
-    <section id="como-funciona" className="bg-[#ECECEC] px-4 py-16 md:px-20 text-slate-900">
+    <section id="como-funciona" className="bg-white px-4 py-16 md:px-20 text-slate-900">
       <div className="max-w-7xl mx-auto gap-12 items-center">
         <div className="text-left">
-          <h4 className="text-sm font-bold text-[#4CAACE] uppercase mb-2 flex items-center gap-2">COMO FUNCIONA</h4>
+          <h4 className="text-sm font-bold text-[#94C68A] uppercase mb-2 flex items-center gap-2">COMO FUNCIONA</h4>
           <h2 className="text-3xl md:text-5xl font-bold text-black mb-5">Como faço para receber meu desconto?</h2>
         </div>
 
@@ -86,8 +86,8 @@ export default function Funciona() {
               </div>
 
               {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-28 right-[-20%] w-full max-w-[150px] border-t-2 border-dashed border-[#0B1627]">
-                  <span className="absolute -top-[5px] right-0 w-2.5 h-2.5 bg-[#0B1627] rounded-full"></span>
+                <div className="hidden md:block absolute top-28 right-[-20%] w-full max-w-[150px] border-t-2 border-dashed border-black">
+                  <span className="absolute -top-[5px] right-0 w-2.5 h-2.5 bg-black rounded-full"></span>
                 </div>
               )}
 

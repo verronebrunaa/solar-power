@@ -6,12 +6,12 @@ import ActionButton from "../buttons/ActionButton";
 
 const Cobertura = () => {
   return (
-    <section id="cobertura" className="px-6 py-16 bg-[#0B1627] text-white rounded-[50px]">
+    <section id="cobertura" className="px-6 py-16 bg-black text-white rounded-[50px]">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         <div className="text-left">
-          <p className="text-sm font-bold text-[#4CAACE] uppercase mb-2 flex items-center gap-2">Cobertura</p>
+          <p className="text-sm font-bold text-[#94C68A] uppercase mb-2 flex items-center gap-2">Cobertura</p>
 
-          <h2 className="text-4xl md:text-5xl font-extrabold text-[#FAE34C] leading-tight mb-4">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-[#94C68A] leading-tight mb-4">
             Presente em 5 estados
             <br />e expandindo
           </h2>
@@ -84,18 +84,18 @@ const Cobertura = () => {
               }}
             >
               <div
-                className="w-10 h-10 flex items-center justify-center rounded-full text-[#0B1627] font-bold text-sm 
+                className="w-10 h-10 flex items-center justify-center rounded-full text-black font-bold text-sm 
         shadow-lg transition transform group-hover:scale-110 group-hover:rotate-1 z-10"
                 style={{
-                  backgroundColor: "#FAE34C",
-                  boxShadow: "0 0 10px #FAE34C, 0 0 20px #FAE34C, 0 0 40px #FFD700",
+                  backgroundColor: "#94C68A",
+                  boxShadow: "0 0 10px #94C68A, 0 0 20px #94C68A, 0 0 40px #FFD700",
                 }}
               >
                 {uf}
               </div>
 
               <div
-                className="absolute left-1/2 -translate-x-1/2 -top-14 bg-white text-[#0B1627] text-xs px-3 py-2 rounded-lg shadow-lg 
+                className="absolute left-1/2 -translate-x-1/2 -top-14 bg-white text-black text-xs px-3 py-2 rounded-lg shadow-lg 
         opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-20"
               >
                 {concessionarias.join(", ")}

@@ -6,14 +6,14 @@ import ActionButton from "../buttons/ActionButton";
 
 const Vantagens = () => {
   return (
-    <section id="vantagens" className="bg-[#ECECEC] py-16 px-6">
+    <section id="vantagens" className="bg-white py-16 px-6">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         <div className="text-left">
-          <p className="text-sm font-bold text-[#4CAACE] uppercase mb-2">Vantagens</p>
+          <p className="text-sm font-bold text-[#94C68A] uppercase mb-2">Vantagens</p>
 
-          <h2 className="flex flex-wrap items-baseline gap-2 font-extrabold leading-tight text-[#0B1627]">
+          <h2 className="flex flex-wrap items-baseline gap-2 font-extrabold leading-tight text-black">
             <span className="text-8xl md:text-9xl">ZERO</span>
-            <span className="italic text-[#4CAACE] text-6xl md:text-7xl">burocracia</span>
+            <span className="italic text-[#94C68A] text-6xl md:text-7xl">burocracia</span>
           </h2>
 
           <p className="text-lg text-neutral-800 mt-4 mb-8 font-medium">
@@ -39,7 +39,7 @@ const Vantagens = () => {
                 <BsCheck2Circle className="text-[#94C68A] mt-1 w-8 h-8" aria-hidden="true" />
                 <div>
                   <p className="font-bold">{item.title}</p>
-                  <p className="text-sm text-[#0B1627]">{item.desc}</p>
+                  <p className="text-sm text-black">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -52,7 +52,7 @@ const Vantagens = () => {
           <div className="absolute top-0 right-0 w-[480px] h-[280px] md:w-[340px] md:h-[220px] rounded-xl overflow-hidden shadow-lg z-0">
             <div className="relative w-full h-full rounded-xl overflow-hidden">
               <Image src="/painel-solar.jpg" alt="Painéis solares" fill className="object-cover rounded-xl" />
-              <div className="absolute inset-0 bg-gradient-to-b from-[#FAE34C]/50 to-[#4CAACE]/50" />
+              <div className="absolute inset-0 bg-gradient-to-b from-[#94C68A]/50 to-[#94C68A]/50" />
             </div>
           </div>
 

@@ -26,7 +26,8 @@ const perguntasERespostas = [
   },
   {
     pergunta: "Quando começo a receber os meus créditos de energia?",
-    resposta: "A partir de até 45 dias úteis após a assinatura e validação junto à distribuidora de energia.",
+    resposta:
+      "A partir de até 45 dias úteis após a assinatura e validação junto à distribuidora de energia.",
   },
 ];
 
@@ -38,30 +39,39 @@ export default function Duvidas() {
   };
 
   return (
-    <section id="dúvidas" className="max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-16 mb-6">
+    <section
+      id="dúvidas"
+      className="max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-16 mb-6"
+    >
       <div className="md:w-1/3">
-        <h4 className="text-[#4CAACE] uppercase font-semibold tracking-wide text-sm mb-2">DÚVIDAS</h4>
-        <h2 className="text-5xl font-bold text-black">
-          Perguntas e<br />
-          respostas
-        </h2>
+        <h4 className="text-[#94C68A] uppercase font-semibold tracking-wide text-sm mb-2">
+          DÚVIDAS
+        </h4>
+        <h2 className="text-5xl font-bold text-black">Perguntas e respostas</h2>
       </div>
 
       <div className="md:w-3/3 space-y-4">
         {perguntasERespostas.map((item, index) => (
-          <div key={index} className="border border-blue-200 rounded-md bg-white transition-all">
+          <div
+            key={index}
+            className="border border-[#94C68A] rounded-md bg-white transition-all"
+          >
             <button
               className="w-full text-left text-black p-4 flex justify-between items-center font-semibold text-sm"
               onClick={() => toggle(index)}
             >
               {item.pergunta}
               {aberta === index ? (
-                <GoDash size={18} className="text-[#4CAACE]" />
+                <GoDash size={18} className="text-[#94C68A]" />
               ) : (
-                <FaPlus size={18} className="text-[#4CAACE]" />
+                <FaPlus size={18} className="text-[#94C68A]" />
               )}
             </button>
-            {aberta === index && item.resposta && <div className="px-4 pb-4 text-sm text-black">{item.resposta}</div>}
+            {aberta === index && item.resposta && (
+              <div className="px-4 pb-4 text-sm text-black">
+                {item.resposta}
+              </div>
+            )}
           </div>
         ))}
       </div>
