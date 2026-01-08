@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ECECEC;
-  --foreground: #ECECEC;
+  --background: #ddd;
+  --foreground: #ddd;
 }
 
 @theme inline {
@@ -17,8 +17,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #ECECEC;
-    --foreground: #ECECEC;
+    --background: #ddd;
+    --foreground: #ddd;
   }
 }
 
@@ -106,14 +106,14 @@ label {
 }
 
 .input-field:focus {
-  border-color: #49BDF4;
+  border-color: #94C68A;
 }
 
 select.input-field {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background-color: white;
+  background-color: #ddd;
   padding: 10px;
 }
 
