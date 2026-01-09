@@ -34,3 +34,38 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Deploy on GitHub Pages
+
+Este projeto está configurado para ser automaticamente implantado no GitHub Pages.
+
+### Configuração Inicial
+
+1. No repositório do GitHub, vá em **Settings** > **Pages**
+2. Em **Source**, selecione **GitHub Actions**
+3. O workflow já está configurado em `.github/workflows/deploy.yml`
+
+### Deploy Manual
+
+Se quiser fazer o build e testar localmente:
+
+```bash
+# Build para produção
+npm run build
+
+# O site será gerado na pasta /out
+```
+
+### Deploy Automático
+
+Cada push na branch `main` irá automaticamente:
+1. Fazer o build do projeto
+2. Fazer deploy para o GitHub Pages
+3. O site estará disponível em: https://verronebrunaa.github.io/solar-power/
+
+### Notas Importantes
+
+- As imagens estão configuradas com `unoptimized: true` para funcionar no GitHub Pages
+- O `basePath` está configurado como `/solar-power` em produção
+- O arquivo `.nojekyll` garante que o GitHub Pages não processe o site como Jekyll
+
